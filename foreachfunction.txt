@@ -1,0 +1,14 @@
+3)API accessing using ForEach Function.
+
+var request=new XMLHttpRequest();
+request.open('GET',"https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json",true);
+request.send();
+request.onload=function(){
+    var data=JSON.parse(request.response);
+    //console.log(data);
+data.forEach(ele => {
+    // console.log(ele.flag,ele.name,ele.capital);
+    console.log(`Name: ${ele.name} Capital: ${ele.capital} Flag: ${ele.flag}`);
+
+});
+}
