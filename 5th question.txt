@@ -1,0 +1,13 @@
+5)API using any funciton .
+
+var request=new XMLHttpRequest();
+request.open('GET',"https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json",true);
+request.send();
+request.onload=function(){
+    var data=JSON.parse(request.response);
+var data1=data.filter((ele)=>{
+    if(ele.currencies[0].code==="USD")
+      return ele.name;
+})
+console.log(data1);
+}
